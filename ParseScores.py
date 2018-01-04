@@ -1,3 +1,5 @@
+import os
+
 #Point of this program is to scrape webpage that displays fantasy bball results
 def scrapeScores(HTML_Page):
     from bs4 import BeautifulSoup
@@ -26,6 +28,13 @@ def scrapeScores(HTML_Page):
 
     return CombinedResults;
 
-#sample call below
-print scrapeScores('C:\Users\\accra_000\Desktop\JaVale Vindicated Scoreboard_ Matchup 11 (Dec 25 - 31) - ESPN.html')
+def main():
+    path_to_script = os.path.realpath(__file__)
+    script_directory = os.path.dirname(path_to_script)
 
+    #sample call below
+    full_test_file_path = os.path.join(script_directory, 'JaVale Vindicated Scoreboard_ Matchup 11 (Dec 25 - 31) - ESPN.html')
+    print scrapeScores(full_test_file_path)
+
+if __name__ == '__main__':
+    main()
