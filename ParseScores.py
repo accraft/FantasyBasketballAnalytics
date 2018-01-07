@@ -27,5 +27,29 @@ def scrapeScores(HTML_Page):
     return CombinedResults;
 
 #sample call below
-print scrapeScores('C:\Users\\accra_000\Desktop\JaVale Vindicated Scoreboard_ Matchup 11 (Dec 25 - 31) - ESPN.html')
+#print scrapeScores('C:\Users\\accra_000\Desktop\JaVale Vindicated Scoreboard_ Matchup 11 (Dec 25 - 31) - ESPN.html')
 
+#now define a function that pulls the hmtl content associated with a generic URL
+import urllib2
+from bs4 import BeautifulSoup
+import browsercookie
+
+#page = urllib2.urlopen('http://games.espn.com/fba/scoreboard?leagueId=73636&matchupPeriodId=12')
+br = browsercookie.chrome()
+opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(br))
+page = opener.open('http://games.espn.com/fba/scoreboard?leagueId=73636&matchupPeriodId=12')
+page_bs = BeautifulSoup(page.read(),'lxml')
+i = 0
+p = -1
+for line in page_bs.prettify().split('\n'):
+    i = i + 1
+    if i <= 40:
+        if 'title>' in line.lower():
+            p = p * -1
+        if p == 1:
+            print i
+            print line
+    else: break
+
+
+#http://games.espn.com/fba/scoreboard?leagueId=73636&matchupPeriodId=12
