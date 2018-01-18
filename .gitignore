@@ -5,6 +5,8 @@
 .idea/**/workspace.xml
 .idea/**/tasks.xml
 .idea/dictionaries
+*.html
+!JaVale Vindicated Scoreboard_ Matchup 11 (Dec 25 - 31) - ESPN.html
 
 # Sensitive or high-churn files:
 .idea/**/dataSources/
