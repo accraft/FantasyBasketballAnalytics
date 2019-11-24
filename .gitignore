@@ -7,6 +7,7 @@
 .idea/dictionaries
 *.html
 !JaVale Vindicated Scoreboard_ Matchup 11 (Dec 25 - 31) - ESPN.html
+.vscode
 
 # Sensitive or high-churn files:
 .idea/**/dataSources/

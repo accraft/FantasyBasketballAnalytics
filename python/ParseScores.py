@@ -89,7 +89,7 @@ def main(weeks,final_csv):
 
 #main pulls all 16 weeks
 if __name__ == '__main__':
-    main(16, 'C:\\Users\\accra_000\\PycharmProjects\\AnalyseBBallLeague\\all_scores.csv')
+    main(16, '..\\data\\all_scores.csv')
 
 
 
